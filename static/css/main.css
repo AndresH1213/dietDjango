@@ -1,0 +1,121 @@
+:root {
+    --color-main: #232b2b;
+    --color-light: #6b6662;
+    --font-size-xs: 12px;
+    --font-size-s: 14px;
+    --font-size-m: 16px;
+    --font-size-l: 18px;
+}
+
+html, body {
+    margin: 0;
+    margin-left: 100px;
+    font-size: var(--font-size-s);
+    background-color: var(--color-main);
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: content-box;
+    color: whitesmoke;
+    font-family: 'BioRhyme', serif;
+    overflow-x: hidden;
+}
+
+input {
+    border-radius: 3px;
+    color: white;
+    -webkit-appearance: none;
+    outline: none;
+    background-color: transparent;
+    width: 80%;
+    justify-self: center;
+    align-self: center;
+}
+
+.container-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: calc(100vw - 300px);
+}
+
+.home-image__container {
+    display: flex;
+    padding: 0;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-image {
+    height: 400px;
+}
+
+.home-text__container {
+    display: flex;
+    flex-direction: column; 
+}
+
+.home-text__container > a {
+    display: inline-flex;
+    margin-top: auto;
+}
+
+.home-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    background-color: var(--color-light);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: wheat;
+    font-size: var(--font-size-l);
+    padding: 5px 15px 5px 15px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 28px;
+    width: 250px;
+    height: 60px;
+}
+.home-btn:hover {
+    background-color: gray;
+    color: black;
+} 
+
+.btn {
+    background-color: var(--color-main);
+    font-size: var(--font-size-xs);
+    width: fit-content;
+    align-self: center;
+    justify-self: center;
+    padding: 5px;
+    border-radius: 0.4rem;
+    color: whitesmoke;
+}
+
+.btn:hover {
+    color: black;
+}
+
+.card {
+    border: 2px solid var(--color-light);
+}
+
+.backButton {
+    background: var(--color-main-light);
+    color: var(--color-main);
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  
+  .backButton i {
+    font-size: 1.8rem;
+  }
+  

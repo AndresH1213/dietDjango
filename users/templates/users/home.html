@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container container-home">
+    <div class="row">
+        <div class="col mb-5">
+            <h4 class="title-program">Mary's Fitness Programm</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 home-text__container">
+            <h1>Be Yourself, no matter what.</h1>
+            <p>Stay healthy for yourself, not for other people </p>
+            <a href="#" class="home-btn">Calculate</a>
+        </div>
+        <div class="col home-image__container">
+            <img class="home-image"
+            src="{% static 'images/panda-home.png' %}" alt="">
+        </div>
+    </div>
+</div>
+{% endblock content %}
