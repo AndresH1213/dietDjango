@@ -3,9 +3,9 @@
         <label for="search-food"><i class="uil uil-search"></i></label>
         <input type="text" id="search-food" placeholder="Search for calories...">
     </div>
-    <div>
+    <div class="animate__animated animate__fadeIn">
         <hr>
-        <ul class="container-links"+>
+        <ul class="container-links">
             <li>
                 calculate daily calories
             </li>
@@ -18,5 +18,5 @@
         </ul>
     </div>
 
-    <a class="btn btn-secondary">LOG IN / SIGN IN</a>
+    <a class="btn btn-secondary" href="{% url 'register' %}">LOG IN / SIGN IN</a>
 </div>
