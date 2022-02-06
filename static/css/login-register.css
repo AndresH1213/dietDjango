@@ -1,5 +1,99 @@
-.form-container {
+.auth-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth {
+    display: flex;
+    flex-direction: column;
+    background-color: #0403033b;
+    align-items: center;
+    justify-self: flex-end;
+    justify-content: center;
+    width: 40%;
+    transform: translateX(15%);
     margin: auto;
-    width: 50%;
-    border: 1px solid red;
+    padding: 10px;
+    border-radius: 0.5rem;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
+.form {
+    margin: 2px;
+    padding: 5px;
+    width: 15rem;
+}
+
+.form__field {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    justify-content: space-between;
+}
+
+.form__field > label {
+    font-size: 0.8em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #ddd;
+    align-self: center;
+}
+
+.input {
+    width: 100%;
+    background-color: #414a4c;
+    border: none;
+    text-align: center;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.input:focus {
+    background-color: #414a4c49;
+    border: 1.5px rgb(20, 30, 30) solid;
+}
+
+.auth__btn {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.btn--sub {
+    align-self: flex-end;
+    border-radius: 8px;
+    border-width: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: linear-gradient(#464d55, #25292e);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .1),0 3px 6px rgba(0, 0, 0, .05);
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: larger;
+    padding: 5px 10px;
+    white-space: nowrap;
+    transform: translate3d(0, 0, 0);
+    transition: all 150ms;
+}
+
+
+.btn--sub:hover {
+  box-shadow: rgba(0, 1, 0, .2) 0 2px 8px;
+  opacity: .85;
+}
+
+.btn--sub:active {
+  outline: 0;
+}
+
+.btn--sub:focus {
+  box-shadow: rgba(0, 0, 0, .5) 0 0 0 3px;
+}
+
+@media (max-width: 420px) {
+  .btn--sub {
+    height: 48px;
+  }
 }

@@ -1,6 +1,10 @@
 :root {
-    --color-main: #232b2b;
-    --color-light: #6b6662;
+    --color-main: #e18597;
+    --color-secondary:#f7aca0;
+    --color-light: #da99bdf6;
+    --color-secondary-light: #f8d5bb;
+    --color-font: #000;
+    --font-family-main: 'Comfortaa', cursive;
     --font-size-xs: 12px;
     --font-size-s: 14px;
     --font-size-m: 16px;
@@ -9,15 +13,14 @@
 
 html, body {
     margin: 0;
-    margin-left: 100px;
     font-size: var(--font-size-s);
     background-color: var(--color-main);
     padding: 0;
     width: 100vw;
     height: 100vh;
     box-sizing: content-box;
-    color: whitesmoke;
-    font-family: 'BioRhyme', serif;
+    color: var(--color-font);
+    font-family: var(--font-family-main); 
     overflow-x: hidden;
 }
 
@@ -40,11 +43,42 @@ input {
     justify-self: center;
     padding: 5px;
     border-radius: 0.4rem;
-    color: whitesmoke;
+    color: black;
 }
 
 .btn:hover {
-    color: black;
+    color: whitesmoke;
+}
+
+.container-search {
+    min-width: 200px;
+}
+
+.container-search > input {
+    background-color: var(--color-secondary-light);
+    margin-left:5px;
+    margin-right: 0;
+    border: none;
+    padding: 5px 2px;
+    color: #000;
+    text-align: center;
+    font-size: 1.1rem;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+}
+
+.container-search > input::placeholder {
+    color: #000;
+    font-size: small;
+}
+
+.container-search > label {
+    cursor: pointer;
+    font-size: 1.5em;
+    padding: 1px;
+    margin-left: -3.5px;
+    transform: translateY(2px);
+    background-color: var(--color-light);
+    border-radius: 1px;
 }
 
 .card {

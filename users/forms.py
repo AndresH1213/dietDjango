@@ -8,7 +8,7 @@ class CustomUserCreationForm(UserCreationForm):
         model = get_user_model()
         fields = ['first_name', 'email', 'username', 'password1', 'password2']
         labels = {
-            'first_name': 'name'
+            'first_name': 'Name'
         }
     
     def __init__(self, *args, **kwargs):

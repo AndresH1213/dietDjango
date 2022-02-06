@@ -6,67 +6,70 @@
 {% endblock styles %}
 
 {% block content %}
+<section class="auth-container">
 
-<div class="auth">
-    {% if page == 'register' %}
-    <div>
-        <h3>Register an Account</h3>
-        <p>Create a new account</p>
-    </div>
+    <div class="auth">
+        {% if page == 'register' %}
+        <div class="mt-3">
+            <h3>Register an Account</h3>
+            <p class="text-center">Create a new account</p>
+        </div>
+        
+        <form action="" method="POST" class="form auth__form" autocomplete="off">
+            {% csrf_token %}
+        
+            {% for field in form %}
+                <div class="form__field">
+                    <label for="formInput#text"> {{ field.label }} </label>
+                    {{ field }}
     
-    <form action="" method="POST" class="form auth__form">
-        {% csrf_token %}
+                    {% for error in field.errors %}
+                        <p class="form__error">{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endfor %}
     
-        {% for field in form %}
-            <div class="form__field">
-                <label for="formInput#text"> {{ field.label }} </label>
-                {{ field }}
-
-                {% for error in field.errors %}
-                    <p class="form__error">{{ error }}</p>
-                {% endfor %}
+            <div class="auth__btn">
+                <input  class="btn btn--sub" type="submit" value="Sign In">
             </div>
-        {% endfor %}
-
-        <div class="auth__btn">
-            <input  class="btn btn--sub" type="submit" value="Sign In">
+        </form>
+    
+        <div>
+            <p>Already have an Account?</p>
+            <a href="#">Log In</a>
         </div>
-    </form>
-
-    <div>
-        <p>Already have an Account?</p>
-        <a href="#">Log In</a>
-    </div>
-
-    {% else %}
-
-    <div>
-        <h3>Hello, we're glad to have you back</h3>
-        <p>Login to your account to continue</p>
+    
+        {% else %}
+    
+        <div>
+            <h3>Hello, we're glad to have you back</h3>
+            <p>Login to your account to continue</p>
+        </div>
+        
+        <form action="" method="POST" class="form auth__form">
+            {% csrf_token %}
+            <div class="form__field">
+                <label for="formInput#text">Username: </label>
+                <input class="input input--text" type="text" name="username" placeholder="Enter your username...">
+            </div>
+            <div class="form__field">
+                <label for="formInput#text">Password: </label>
+                <input class="input input--password" type="password" name="password" placeholder="••••••••">
+            </div>
+            <div class="auth__btn">
+                <input type="submit" class="btn btn--sub" value="Log In">
+                <a href="#">Forget your password?</a>
+            </div>
+        </form>
+        <div>
+            <p>Don't have an Account?</p>
+            <a href="{% url 'register' %}">Sign Up</a>
+        </div>
+    
+        {% endif %}
+    
     </div>
     
-    <form action="" method="POST" class="form auth__form">
-        {% csrf_token %}
-        <div class="form__field">
-            <label for="formInput#text">Username: </label>
-            <input class="input input--text" type="text" name="username" placeholder="Enter your username...">
-        </div>
-        <div class="form__field">
-            <label for="formInput#text">Password: </label>
-            <input class="input input--password" type="password" name="password" placeholder="••••••••">
-        </div>
-        <div class="auth__btn">
-            <input type="submit" class="btn btn--sub" value="Log In">
-            <a href="#">Forget your password?</a>
-        </div>
-    </form>
-    <div>
-        <p>Don't have an Account?</p>
-        <a href="{% url 'register' %}">Sign Up</a>
-    </div>
-
-    {% endif %}
-
-</div>
+</section>
 
 {% endblock content %}
