@@ -34,16 +34,15 @@
             </div>
         </form>
     
-        <div>
-            <p>Already have an Account?</p>
-            <a href="#">Log In</a>
+        <div class="auth__actions">
+            <p>Already have an Account?... <a href="{% url 'login' %}">Log In<i class="uil uil-signout"></i></a></p>
         </div>
     
         {% else %}
     
         <div>
-            <h3>Hello, we're glad to have you back</h3>
-            <p>Login to your account to continue</p>
+            <h3>Login to continue</h3>
+            <p>Hello, we're glad to have you back</p>
         </div>
         
         <form action="" method="POST" class="form auth__form">
@@ -55,21 +54,21 @@
             <div class="form__field">
                 <label for="formInput#text">Password: </label>
                 <input class="input input--password" type="password" name="password" placeholder="••••••••">
+                <a href="#">Forget your password?</a>
             </div>
             <div class="auth__btn">
                 <input type="submit" class="btn btn--sub" value="Log In">
-                <a href="#">Forget your password?</a>
             </div>
         </form>
-        <div>
-            <p>Don't have an Account?</p>
-            <a href="{% url 'register' %}">Sign Up</a>
+        <div class="auth__actions">
+            <p>Don't have an Account? <a href="{% url 'register' %}">Sign Up<i class="uil uil-user-circle"></i></a></p>
         </div>
     
         {% endif %}
     
     </div>
     
+    <img class="image-plants" src="{% static 'images/enredadera.png'  %}" alt="background-decoration">
 </section>
 
 {% endblock content %}

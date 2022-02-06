@@ -14,7 +14,6 @@ def loginUser(request):
     page = 'login'
     if request.user.is_authenticated:
         return redirect('profile')
-
     if request.method == 'POST':
         username = request.POST['username'].lower()
         password = request.POST['password']
@@ -29,7 +28,7 @@ def loginUser(request):
             login(request, user)
             return redirect('profile')
     
-    return render(request, 'user/login-register')
+    return render(request, 'users/login-register.html')
     
 
 def registerUser(request):
