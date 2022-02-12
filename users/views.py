@@ -1,9 +1,10 @@
 from multiprocessing import context
 from django.shortcuts import redirect, render
 from django.contrib.auth import login, logout, authenticate, get_user_model
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, ProfileForm
 
 
 # Create your views here.
@@ -51,3 +52,22 @@ def registerUser(request):
     context = {'page': page, 'form': form}
 
     return render(request, 'users/login-register.html', context)
+
+@login_required(login_url='login')
+def profile(request):
+    return render(request, 'users/profile.html')
+
+@login_required(login_url='login')
+def editProfile(request):
+    profile = request.user.profile
+    form = ProfileForm(instance=profile)
+
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, instance=profile)
+        
+        if form.is_valid():
+            form.save()
+
+            return redirect('profile')
+    
+    return render(request, 'users/profile-form.html', {'form': form})

@@ -19,7 +19,7 @@ class Profile(models.Model):
         ('f', 'Female'),
     )
 
-    username = models.OneToOneField(User, on_delete=models.CASCADE)
+    username = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=50, null=True, blank=True)
     born_date = models.DateField(null=True, blank=True)
     height = models.IntegerField(
@@ -34,6 +34,9 @@ class Profile(models.Model):
     weight = models.IntegerField(null=True, blank=True)
     physical_activity = models.CharField(max_length=5, choices=PHYSICAL_ACTIVITY_LEVEL,null=True, blank=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+
+    def __str__(self) -> str:
+        return self.name
 
 class NutricionalInfo(models.Model):
     WEIGHTS = (
@@ -78,3 +81,6 @@ class NutricionalInfo(models.Model):
             return 'Fill your biological sex'
         
         self.save()
+
+    def __str__(self) -> str:
+        return str(self.user)
