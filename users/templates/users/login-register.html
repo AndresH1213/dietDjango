@@ -15,7 +15,7 @@
             <p class="text-center">Create a new account</p>
         </div>
         
-        <form action="" method="POST" class="form auth__form" autocomplete="off">
+        <form action="{% url 'register' %}" method="POST" class="form auth__form" autocomplete="off">
             {% csrf_token %}
         
             {% for field in form %}
